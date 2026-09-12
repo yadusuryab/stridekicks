@@ -3,187 +3,120 @@ import React from "react";
 
 const TermsAndConditions = () => {
   return (
-    // Add this component right before the fixed bottom button section
     <div className="mt-6">
       <Card>
-        <CardContent className="pt-6">
-          <div className="text-center mb-4">
-            <p className="text-sm font-medium text-muted-foreground">
-              BY PLACING AN ORDER, YOU AGREE TO OUR TERMS & CONDITIONS:
-            </p>
-          </div>
+        <CardContent className="">
 
-          <div className="max-w-3xl mx-auto p-4 bg-muted/30 rounded-lg text-xs">
-            <h2 className="text-lg font-bold text-center mb-3">
-              TERMS & CONDITIONS
-            </h2>
 
-            <section className="mb-4">
-              <h3 className="text-sm font-semibold">
-                RETURN & REPLACEMENT POLICY
-              </h3>
+          <div className="max-w-3xl mx-auto text-sm space-y-4">
+            <h2 className="text-lg font-bold text-center tracking-tight">TERMS & CONDITIONS</h2>
+
+            <section className="bg-secondary rounded-md p-4 ">
+              <h3 className="text-sm font-bold tracking-tight">RETURN & REPLACEMENT POLICY</h3>
+              <ul className="list-disc ml-4 mt-1 space-y-1">
+                <li>Replacement only for wrong size, incorrect item, or damage.</li>
+                <li>No returns or refunds for personal preference or dislike.</li>
+              </ul>
+              <p className="mt-1 font-semibold   tracking-tight">
+                Refunds are not available, only replacements.
+              </p>
+            </section>
+
+            <section>
+              <h3 className="text-sm font-semibold">UNBOXING VIDEO REQUIREMENTS</h3>
               <ul className="list-disc ml-4 mt-1 space-y-1">
                 <li>
-                  You can return the product for a replacement if the product is
-                  the wrong size, incorrect, or damaged.
+                  A continuous, uncut <span className="font-semibold">360° unboxing video</span> is mandatory for any
+                  damage, size, or missing-item claim. <span className="font-semibold">Report within 24 hours.</span>
                 </li>
-                <li>
-                  We do not offer exchanges, returns, or refunds for reasons
-                  related to personal preferences or dislikes. We strive to
-                  provide the best, but individual tastes and preferences may
-                  vary.
-                </li>
+                <li>Video must start by showing the address label and outer packaging.</li>
+                <li>Edited or fake unboxing videos are not accepted as proof.</li>
               </ul>
+            </section>
+
+            <section>
+              <h3 className="text-sm font-semibold">AI-GENERATED IMAGES & PRODUCT REPRESENTATION</h3>
               <p className="mt-1">
-                Refunds are not available, only replacements. However, if the
-                product is lost by the courier service, a refund is applicable
-                under specific conditions.
+                Some product visuals are AI-generated for display purposes. We
+                aim to match products closely to these images.
               </p>
-            </section>
-
-            <section className="mb-4">
-              <h3 className="text-sm font-semibold">
-                UNBOXING VIDEO REQUIREMENTS
-              </h3>
-              <ul className="list-disc ml-4 mt-1 space-y-1">
-                <li>
-                  A 360-degree video of unboxing the parcel is mandatory for any
-                  claims related to damage, size incorrect, missing items, etc.
-                  The issue must be clearly shown in the video without any
-                  pauses or cuts. This must be reported within 24 hours of
-                  receiving the parcel.
-                </li>
-                <li>
-                  The video should begin by showing the address label as sent by
-                  us, including the outer packaging.
-                </li>
-              </ul>
               <p className="mt-1">
-                Some customers forget to take an unboxing video and later create
-                fake videos. We do not accept such videos as proof. All
-                customers must follow our guidelines.
+                Minor differences in color, texture, shine, or finish may occur
+                due to lighting, AI rendering, screen settings, or stock
+                variation. These are normal and not defects.
               </p>
-            </section>
-            <section className="terms-section">
-              <h3>AI-Generated Images & Product Representation</h3>
-
-              <p>
-                Some of our product visuals are created using AI for display
-                purposes. We make sincere efforts to deliver products that
-                closely match the images shown.
-              </p>
-
-              <p>
-                Minor variations in color tone, texture, shine, or finishing may
-                occur due to lighting conditions, AI rendering, screen
-                differences, or stock variations. These are normal aspects of
-                digital product representation.
-              </p>
-
-              <p>
-                ~Buy 1 Get 1 Offer or Two Pair 1499₹ Offer – Quality & Pricing
-                Our Buy 1 Get 1 offer is structured to provide maximum value
-                within this price range. The products offered under this
-                promotion are 6A quality replicas, and their quality is aligned
-                with the offer pricing. please note that this is a commercial
-                market grading term used for replica products. It does not mean
-                the product is original, officially branded, or authorized by
-                the brand owner.
-              </p>
-              <h3>Returns & Replacements</h3>
-
-              <p>
-                Variations arising from visual representation, lighting effects,
-                or digital creation methods are not considered manufacturing
-                defects and are not eligible for return or replacement.
+              <p className="mt-1">
+                Buy 1 Get 1 / Two Pair ₹1499 offers use 6A-quality replica
+                products, priced accordingly. "6A quality" is a market grading
+                term only — it does not imply original, branded, or authorized
+                goods.
               </p>
             </section>
 
-            <section className="mb-4">
+            <section>
+              <h3 className="text-sm font-semibold">RETURNS & REPLACEMENTS (VISUAL VARIATION)</h3>
+              <p className="mt-1">
+                Differences from lighting, digital rendering, or screen display
+                are not manufacturing defects and are not eligible for return
+                or replacement.
+              </p>
+            </section>
+
+            <section className="bg-orange-100 text-orange-800 rounded-md p-4">
               <h3 className="text-sm font-semibold">IMPORTANT NOTES</h3>
               <ul className="list-disc ml-4 mt-1 space-y-1">
-                <li>
-                  Slight color variation or light/dark differences due to
-                  digital photography or device screen settings may occur.
-                  Therefore, images shown may differ slightly from the actual
-                  product.
-                </li>
-                <li>
-                  For combo or offer items, model selection will be as per your
-                  order, but minor color variations may occur depending on stock
-                  availability. We always ensure the closest match possible to
-                  your chosen color.
-                </li>
-                <li>
-                  Minor issues like loose threads, removable stains, or slight
-                  stitching imperfections are not considered damages.
-                </li>
+                <li>Slight color variation may occur due to photography or screen settings.</li>
+                <li>Combo/offer items follow your selected model; minor color shifts may occur based on stock — closest match is ensured.</li>
+                <li>Loose threads, removable stains, or minor stitching flaws are not considered damage.</li>
               </ul>
             </section>
 
-            <section className="mb-4">
-              <h3 className="text-sm font-semibold">*KEEP IN MIND</h3>
+            <section>
+              <h3 className="text-sm font-semibold">KEEP IN MIND</h3>
               <ul className="list-disc ml-4 mt-1 space-y-1">
-                <li>Cancellation is not allowed after placing the order.</li>
+                <li>Orders cannot be cancelled once placed.</li>
                 <li>
-                  If you want to replace a product, you must bear the courier
-                  charges. If the issue is from our side, we will cover the
-                  courier cost only after you provide the dispatch slip.
+                  Replacement courier costs are borne by you, unless the fault
+                  is ours — then we cover it once you share the dispatch slip.
                 </li>
-                <li>
-                  The quality of the product is based on the price you pay.
-                </li>
+                <li>Product quality corresponds to the price paid.</li>
               </ul>
             </section>
 
-            <section className="mb-4">
+            <section>
               <h3 className="text-sm font-semibold">SHIPPING & DELIVERY</h3>
               <ul className="list-disc ml-4 mt-1 space-y-1">
-                <li>We are not the owners of any courier services.</li>
+                <li>We do not own or operate the courier services used.</li>
                 <li>
-                  We send parcels through third-party courier services. If there
-                  is any delay in delivery, we are not responsible as it is
-                  beyond our control. However, 24x7 support is available from
-                  our side with 100% effort to resolve the issue. If the issue
-                  remains unresolved, it will be handled through mutual
-                  discussion.
+                  Delivery delays by third-party couriers are beyond our
+                  control. <span className="font-semibold">24x7 support</span> is available, and unresolved issues
+                  are handled through mutual discussion.
                 </li>
-                <li>
-                  Do not request refunds or order cancellations due to courier
-                  delays. Please be patient and cooperate.
-                </li>
+                <li>Refunds or cancellations are not granted for courier delays.</li>
               </ul>
             </section>
 
-            <section className="mb-4">
-              <h3 className="text-sm font-semibold">
-                SIZE REPLACEMENT CONDITIONS
-              </h3>
+            <section>
+              <h3 className="text-sm font-semibold">SIZE REPLACEMENT CONDITIONS</h3>
               <p className="mt-1">
-                If you wish to replace the delivered product with the same shoes
-                in a different size, it will be processed based on stock
+                Same-shoe, different-size replacements depend on stock
                 availability.
               </p>
               <p className="mt-1">
-                However, if you ordered size 10 and received the correct size as
-                per your order but later wish to exchange for a larger size,
-                this is not possible, as we clearly specify the maximum
-                available size (size 10) before purchase. Similarly, if you
-                order size 6 and wish to replace it with size 5 (which is
-                smaller), this is also not possible. Please keep this in mind
-                while placing your order.
+                If your correct size was delivered, exchanging it for a larger
+                or smaller size afterward is not possible — the available size
+                range is stated before purchase. Please review sizing carefully
+                before ordering.
               </p>
             </section>
 
-            <p className="mt-3 text-center font-bold text-xs">
-              Note: Read carefully; do not scroll without understanding. Later,
-              do not blame us. For more terms and conditions, check our website.
-              If you have any doubts, clarify them with us before placing an
-              order.
+            <p className="mt-3 text-center bg-green-100 text-green-800 p-4 rounded-md font-bold text-xs">
+              Please read all terms carefully before ordering. For full terms,
+              visit our website. Contact us first with any questions.
             </p>
 
             <p className="mt-3 text-center font-semibold">
-              BEST REGARDS, stridekicks TEAM
+              BEST REGARDS, STRIDEKICKS TEAM
             </p>
           </div>
         </CardContent>

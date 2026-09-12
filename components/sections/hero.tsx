@@ -1,6 +1,6 @@
 "use client";
 
-import Poster2 from "@/public/offer-p.avif";
+import Poster2 from "@/public/op3-420-9kb.avif";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -33,7 +33,7 @@ export function Hero() {
       .finally(() => setBannerFetched(true));
   }, []);
 
-  const imageSrc = banner?.imageUrl || Poster2.src;
+  const imageSrc = banner?.imageUrl || Poster2;
   const href = banner?.link || "/offer?price=1199";
   const alt = banner?.title || "BOGO at ₹999";
 
@@ -63,8 +63,10 @@ export function Hero() {
               imageLoaded ? "opacity-100" : "opacity-0"
             } ${isLoading ? "opacity-60" : ""}`}
             priority
+            fetchPriority="high"
             quality={60}
-            sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 600px"
+            sizes="420px"
+            placeholder={typeof imageSrc !== "string" ? "blur" : undefined}
             onLoad={() => setImageLoaded(true)}
           />
 
@@ -75,7 +77,7 @@ export function Hero() {
           )}
         </div>
 
-        {/* Liquid glass overlay button — floating, not full-width, sits on top of image bottom edge */}
+        {/* Liquid glass overlay button */}
         <div className="absolute bottom-4 left-4 right-4 flex justify-center">
           <div
             className="
@@ -99,8 +101,8 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Top-left floating glass badge */}
-        <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white font-semibold tracking- uppercase backdrop-blur-md border border-white/30 text-black text-xs font-medium">
+        {/* Top-right floating glass badge */}
+        <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-white font-semibold uppercase backdrop-blur-md border border-white/30 text-black text-xs font-medium">
           Limited offer
         </div>
 
