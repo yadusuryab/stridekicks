@@ -6,6 +6,7 @@ import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { IconSquareRoundedXFilled } from "@tabler/icons-react"
+import { Button } from "./button"
 
 const Dialog = DialogPrimitive.Root
 
@@ -45,9 +46,8 @@ const DialogContent = React.forwardRef<
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="absolute right-2 top-2  bg-white rounded-xl  ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <IconSquareRoundedXFilled className="h-10 w-10" />
-        <span className="sr-only">Close</span>
+      <DialogPrimitive.Close className="absolute -right-3 -top-3 z-10 ">
+        <Button size="icon" variant="secondary" className="text-xl font-semibold tracking-tighter rounded-full bg-white/75 backdrop-blur-sm saturate-200 z-10" ><X className="h-12 w-12" /> </Button>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
   </DialogPortal>

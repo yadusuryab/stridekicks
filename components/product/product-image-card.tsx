@@ -22,11 +22,11 @@ interface ProductCardProps {
 }
 
 const LABEL_STYLES: Record<string, string> = {
-  trending: "bg-orange-500 text-white",
-  "new-arrival": "bg-blue-500 text-white",
-  "best-seller": "bg-purple-500 text-white",
-  "limited-edition": "bg-black text-white",
-  sale: "bg-red-500 text-white",
+  trending: "bg-green-500/90 saturate-200 backdrop-blur-xl text-white",
+  "new-arrival": "bg-orange-500/90 saturate-200 backdrop-blur-xl text-white",
+  "best-seller": "bg-blue-500/90 saturate-200 backdrop-blur-xl text-white",
+  "limited-edition": "bg-white/90 saturate-200 backdrop-blur-xl text-black",
+  sale: "bg-red-500/90 saturate-200 backdrop-blur-xl text-white",
 };
 
 const LABEL_TITLES: Record<string, string> = {
@@ -46,7 +46,7 @@ export default function ProductCard2({
   const { productName, price, offerPrice, imageUrl, productLabel } = product;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-
+  const extra = price - 1499;
   const cardContent = (
     <div 
       onClick={onClick}
@@ -60,15 +60,21 @@ export default function ProductCard2({
             {productLabel.slice(0, 2).map((label: string) => (
               <span
                 key={label}
-                className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
+                className={`text-xs tracking-tight text-center font-bold px-2 py-0.5 rounded uppercase ${
                   LABEL_STYLES[label] || "bg-gray-800 text-white"
                 }`}
               >
                 {LABEL_TITLES[label] || label}
+                 
               </span>
             ))}
           </div>
         )}
+      {price > 1499 && (  <div className="absolute bottom-2 right-2 z-10">
+      <span className="text-xs font-bold tracking-tight px-2 py-0.5 rounded bg-yellow-300 text-black">
+        EXTRA ₹{extra}
+      </span>
+    </div>)}
 
         {!imageError ? (
           <>
@@ -92,7 +98,7 @@ export default function ProductCard2({
               placeholder="blur" // ✅ Add blur placeholder
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R" // ✅ Small base64 placeholder
             />
-            
+           
             {/* ✅ Skeleton loader while image loads */}
             {!imageLoaded && (
               <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">

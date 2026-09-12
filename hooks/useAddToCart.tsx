@@ -387,8 +387,16 @@ export const useAddToCart = () => {
 
     return (
       <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm flex flex-col items-center justify-center gap-4 p-6 text-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
-        <p className="text-sm text-muted-foreground">Taking you to checkout…</p>
+     <div className="flex bg-secondary justify-center rounded-md w-fit mx-auto py-1 px-2  items-center gap-4">
+  <div className="relative h-5 w-5">
+    <div className="absolute inset-0 rounded-full border-4 border-primary/20" />
+    <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-primary animate-spin" />
+    <div className="absolute inset-2 rounded-full bg-primary/10 animate-pulse" />
+  </div>
+  <p className="text-md font-semibold  text-muted-foreground animate-pulse">
+    Taking you to checkout…
+  </p>
+</div>
 
         {showCheckoutFallback && (
           <div className="mt-2 flex flex-col items-center gap-2">
