@@ -40,13 +40,13 @@ export default function CookiesPolicy() {
           <li>
             <strong>Website:</strong> Refers to stridekicks, accessible from
             <a
-              href="https://stridekicks.in"
+              href="https://strideshoppe.in"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500"
             >
               {" "}
-              stridekicks.in
+              strideshoppe.in
             </a>
             .
           </li>
@@ -106,12 +106,12 @@ export default function CookiesPolicy() {
         <p>
           If you have any questions about this Cookies Policy, contact us at:
           <a
-            href="https://stridekicks.in/contact"
+            href="https://strideshoppe.in/contact"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-500"
           >
-            stridekicks.in/contact
+            strideshoppe.in/contact
           </a>
           .
         </p>

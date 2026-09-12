@@ -201,13 +201,13 @@ export default function CheckoutPage() {
       const productMessages = cartItems
         .map((item, idx) => {
           const extra = Math.max(0, (item.price || BASE_PRICE) - BASE_PRICE);
-          let msg = `*PAIR ${idx + 1}*\nProduct: ${item.productName?.toUpperCase() || "Unknown"}\nSize: ${item.selectedSize || "N/A"}\nExtra: ₹${extra}\nLink: https://stridekicks.in/p/${item._id}`;
+          let msg = `*PAIR ${idx + 1}*\nProduct: ${item.productName?.toUpperCase() || "Unknown"}\nSize: ${item.selectedSize || "N/A"}\nExtra: ₹${extra}\nLink: https://strideshoppe.in/p/${item._id}`;
           if (item.buyOneGetOne && item.freeProduct) {
             const fExtra = Math.max(
               0,
               (item.freeProduct.price || BASE_PRICE) - BASE_PRICE,
             );
-            msg += `\n\n*PAIR ${idx + 2}*\nProduct: ${item.freeProduct.productName?.toUpperCase() || "Unknown"}\nSize: ${item.freeProduct.selectedSize || "N/A"}\nExtra: ₹${fExtra}\nLink: https://stridekicks.in/p/${item.freeProduct._id}`;
+            msg += `\n\n*PAIR ${idx + 2}*\nProduct: ${item.freeProduct.productName?.toUpperCase() || "Unknown"}\nSize: ${item.freeProduct.selectedSize || "N/A"}\nExtra: ₹${fExtra}\nLink: https://strideshoppe.in/p/${item.freeProduct._id}`;
           }
           return msg;
         })
@@ -269,7 +269,9 @@ export default function CheckoutPage() {
               >
                 {isDone ? <CheckCircle2 className="h-3 w-3" /> : i + 1}
               </div>
-              <span className="text-md tracking-tighter font-semibold">{labels[i]}</span>
+              <span className="text-md tracking-tighter font-semibold">
+                {labels[i]}
+              </span>
             </div>
             {i < 1 && (
               <div
@@ -356,14 +358,16 @@ export default function CheckoutPage() {
                         {/* {mainProduct.productName || "Product"} */}
                         Stridekicks Sneakers
                       </p>
-                    
+
                       <p className="text-xs font-semibold text-muted-foreground">
                         Size: {mainProduct.selectedSize || "N/A"}
                       </p>
-                      <Badge variant="destructive" className="absolute top-0 right-0 rounded-md text-white">
+                      <Badge
+                        variant="destructive"
+                        className="absolute top-0 right-0 rounded-md text-white"
+                      >
                         1st Pair
                       </Badge>
-                       
                     </div>
                   </div>
                   {freeProduct && (
@@ -376,12 +380,11 @@ export default function CheckoutPage() {
                         />
                       </div>
                       <div className="mt-2 text-center">
-                      <p className="text-sm  font-semibold tracking-tight">
-                            {/* {freeProduct.productName || "Free Product"} */}
-                                                  Stridekicks Sneakers
-
+                        <p className="text-sm  font-semibold tracking-tight">
+                          {/* {freeProduct.productName || "Free Product"} */}
+                          Stridekicks Sneakers
                         </p>
-                         <p className="text-xs font-semibold text-muted-foreground">
+                        <p className="text-xs font-semibold text-muted-foreground">
                           Size: {freeProduct.selectedSize || "N/A"}
                         </p>
                         <Badge className="absolute top-0 right-0 bg-green-600 rounded-md text-white">
@@ -404,62 +407,78 @@ export default function CheckoutPage() {
               </div>
 
               {/* Payment Options */}
-            <RadioGroup
-  value={shippingMethod}
-  onValueChange={(v: "online" | "cod") => setShippingMethod(v)}
-  className="space-y-1"
->
-  {/* Online Payment */}
-  <label
-    htmlFor="online"
-    className={`flex items-start gap-3 rounded-md border-2 p-2 cursor-pointer transition-all ${
-      shippingMethod === "online"
-        ? "border-green-500 bg-green-100"
-        : "border-muted hover:border-primary/50"
-    }`}
-  >
-    <RadioGroupItem value="online" id="online" className="mt-1 shrink-0" />
-    <div className="flex-1 min-w-0 space-y-1.5">
-      <div className="flex items-center justify-between gap-2">
-        <span className="font-semibold tracking-tight">Online Payment</span>
-        <Badge variant="outline" className="text-green-800 border-green-200 text-xs px-2 py-0.5 rounded-md uppercase">
-          Free shipping
-        </Badge>
-      </div>
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="flex  items-center gap-1 text-xs font-bold  text-green-600">
-          Save ₹{COD_CHARGE} instantly
-        </span>
-        <span className="flex items-center tracking-tight font-bold  gap-1 text-xs text-blue-600">
-          <Truck className="h-3 w-3" /> Delivers {onlineDelivery.label}
-        </span>
-      </div>
-    </div>
-  </label>
+              <RadioGroup
+                value={shippingMethod}
+                onValueChange={(v: "online" | "cod") => setShippingMethod(v)}
+                className="space-y-1"
+              >
+                {/* Online Payment */}
+                <label
+                  htmlFor="online"
+                  className={`flex items-start gap-3 rounded-md border-2 p-2 cursor-pointer transition-all ${
+                    shippingMethod === "online"
+                      ? "border-green-500 bg-green-100"
+                      : "border-muted hover:border-primary/50"
+                  }`}
+                >
+                  <RadioGroupItem
+                    value="online"
+                    id="online"
+                    className="mt-1 shrink-0"
+                  />
+                  <div className="flex-1 min-w-0 space-y-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-semibold tracking-tight">
+                        Online Payment
+                      </span>
+                      <Badge
+                        variant="outline"
+                        className="text-green-800 border-green-200 text-xs px-2 py-0.5 rounded-md uppercase"
+                      >
+                        Free shipping
+                      </Badge>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="flex  items-center gap-1 text-xs font-bold  text-green-600">
+                        Save ₹{COD_CHARGE} instantly
+                      </span>
+                      <span className="flex items-center tracking-tight font-bold  gap-1 text-xs text-blue-600">
+                        <Truck className="h-3 w-3" /> Delivers{" "}
+                        {onlineDelivery.label}
+                      </span>
+                    </div>
+                  </div>
+                </label>
 
-  {/* Cash on Delivery */}
-  <label
-    htmlFor="cod"
-    className={`flex items-start gap-3 rounded-md border-2 p-2 cursor-pointer transition-all ${
-      shippingMethod === "cod"
-        ? "border-orange-400 bg-orange-50"
-        : "border-muted hover:border-primary/50"
-    }`}
-  >
-    <RadioGroupItem value="cod" id="cod" className="mt-1 shrink-0" />
-    <div className="flex-1 min-w-0 space-y-1.5">
-      <div className="flex items-center justify-between gap-2">
-        <span className="font-semibold tracking-tight">Cash on Delivery</span>
-        <Badge className="bg-orange-100 text-orange-800 border-orange-200 text-xs px-2 py-0.5 rounded-md font-bold">
-          ₹{COD_CHARGE} extra Advance
-        </Badge>
-      </div>
-      <p className="text-xs font-bold text-muted-foreground">
-        Pay when you receive · Arrives {codDelivery.label}
-      </p>
-    </div>
-  </label>
-</RadioGroup>
+                {/* Cash on Delivery */}
+                <label
+                  htmlFor="cod"
+                  className={`flex items-start gap-3 rounded-md border-2 p-2 cursor-pointer transition-all ${
+                    shippingMethod === "cod"
+                      ? "border-orange-400 bg-orange-50"
+                      : "border-muted hover:border-primary/50"
+                  }`}
+                >
+                  <RadioGroupItem
+                    value="cod"
+                    id="cod"
+                    className="mt-1 shrink-0"
+                  />
+                  <div className="flex-1 min-w-0 space-y-1.5">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="font-semibold tracking-tight">
+                        Cash on Delivery
+                      </span>
+                      <Badge className="bg-orange-100 text-orange-800 border-orange-200 text-xs px-2 py-0.5 rounded-md font-bold">
+                        ₹{COD_CHARGE} extra Advance
+                      </Badge>
+                    </div>
+                    <p className="text-xs font-bold text-muted-foreground">
+                      Pay when you receive · Arrives {codDelivery.label}
+                    </p>
+                  </div>
+                </label>
+              </RadioGroup>
 
               {/* Shoe Cleaner Add-on - Offer style */}
               {/* {shoeCleanerAddon && (
@@ -607,7 +626,10 @@ export default function CheckoutPage() {
                   strokeWidth={1.5}
                 />
                 <p className="text-md font-medium  text-foreground">
-                  Expected Delivery by <span className="font-bold">{formatDeliveryDate(activeDelivery.end)} </span>
+                  Expected Delivery by{" "}
+                  <span className="font-bold">
+                    {formatDeliveryDate(activeDelivery.end)}{" "}
+                  </span>
                 </p>
                 <p className="text-xs font-semibold text-muted-foreground">
                   Delivery Time :{" "}

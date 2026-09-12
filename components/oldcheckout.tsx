@@ -153,7 +153,7 @@ export default function CheckoutPage() {
 
       const productMessages = cartItems
         .map((item, idx) => {
-          const productLink = `https://stridekicks.in/p/${item._id}`;
+          const productLink = `https://strideshoppe.in/p/${item._id}`;
           const extra = Math.max(0, (item.price || 999) - 999);
 
           let message = `*PAIR ${idx + 1}*\n`;
@@ -165,7 +165,7 @@ export default function CheckoutPage() {
           message += `Link: ${productLink}`;
 
           if (item.buyOneGetOne && item.freeProduct) {
-            const freeProductLink = `https://stridekicks.in/p/${item.freeProduct._id}`;
+            const freeProductLink = `https://strideshoppe.in/p/${item.freeProduct._id}`;
             const freeProductExtraAmount = Math.max(
               0,
               (item.freeProduct.price || 999) - 999,
