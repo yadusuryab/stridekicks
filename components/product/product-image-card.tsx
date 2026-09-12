@@ -43,7 +43,7 @@ export default function ProductCard2({
   noLink = true,
   onClick,
 }: ProductCardProps) {
-  const { productName, price, offerPrice, imageUrl, productLabel } = product;
+  const { productName, price, offerPrice, imageUrl, productLabel, orderNumber } = product;
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   const extra = price - 1499;
@@ -75,6 +75,11 @@ export default function ProductCard2({
         EXTRA ₹{extra}
       </span>
     </div>)}
+     <div className="absolute bottom-2 right-2 z-10">
+      <span className="text-xs font-bold tracking-tight px-2 py-0.5 rounded bg-yellow-300 text-black">
+        {orderNumber}
+      </span>
+    </div>
 
         {!imageError ? (
           <>
