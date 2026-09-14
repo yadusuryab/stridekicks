@@ -70,12 +70,15 @@ export default function ProductCard2({
             ))}
           </div>
         )}
+
       {price > 1499 && (  <div className="absolute bottom-2 right-2 z-10">
       <span className="text-xs font-bold tracking-tight px-2 py-0.5 rounded bg-yellow-300 text-black">
         EXTRA ₹{extra}
       </span>
     </div>)}
-     
+          <span className="text-xs font-bold tracking-tight px-2 py-0.5 rounded bg-yellow-300 text-black">
+       {orderNumber}
+      </span>
 
         {!imageError ? (
           <>
