@@ -76,9 +76,7 @@ export default function ProductCard2({
         EXTRA ₹{extra}
       </span>
     </div>)}
-          <span className="text-xs font-bold tracking-tight px-2 py-0.5 rounded bg-yellow-300 text-black">
-       {orderNumber}
-      </span>
+         
 
         {!imageError ? (
           <>
